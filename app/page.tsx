@@ -1,5 +1,6 @@
 import { jobs, posts, projects, type Project } from "./data/portfolioData";
 import PortfolioClientInteractions from "./components/PortfolioClientInteractions";
+import Image from "next/image";
 
 function ProjectCard({ p, index }: { p: Project; index: number }) {
   const host = p.url.replace(/^https?:\/\//, "").split("/")[0];
@@ -113,7 +114,7 @@ export default function HomePage() {
             </div>
             <div className="id-card reveal">
               <div className="avatar">
-                <span className="ini">VJ</span>
+                <Image src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226.jpeg" alt="Vishnu Jangid" className="ini" objectFit="cover" />
               </div>
               <div className="id-row">
                 <span>EXP</span>
