@@ -1,6 +1,9 @@
-import { jobs, posts, projects, type Project } from "./data/portfolioData";
+import portfolioData from "./data/portfolioData.json";
 import PortfolioClientInteractions from "./components/PortfolioClientInteractions";
 import Image from "next/image";
+
+const { jobs, posts, projects } = portfolioData;
+type Project = (typeof projects)[number];
 
 function ProjectCard({ p, index }: { p: Project; index: number }) {
   const host = p.url.replace(/^https?:\/\//, "").split("/")[0];
@@ -114,7 +117,7 @@ export default function HomePage() {
             </div>
             <div className="id-card reveal">
               <div className="avatar">
-                <Image src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226.jpeg" alt="Vishnu Jangid" className="ini" objectFit="cover" />
+                <Image src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226+(1).jpeg" fill alt="Vishnu Jangid" className="ini" objectFit="cover" loading="lazy" />
               </div>
               <div className="id-row">
                 <span>EXP</span>
@@ -144,38 +147,20 @@ export default function HomePage() {
               <span className="lbl">FEATURED</span>
               <span>{"// latest writing and updates"}</span>
               <span className="line" />
-              <div className="feat-ctrl">
-                <button id="carPrev" aria-label="Previous">
-                  {"<"}
-                </button>
-                <button id="carNext" aria-label="Next">
-                  {">"}
-                </button>
-              </div>
             </div>
-            <div className="carousel reveal">
-              <div className="track" id="carTrack">
-                {featuredPosts.map((post, index) => (
-                  <div key={`${post.url}-${index}`} className="slide">
-                    <div className="meta">
-                      <span className="pill">{post.tag}</span>
-                      <span>{post.date}</span>
-                      <span>{"// LinkedIn"}</span>
-                    </div>
-                    <h3>{post.title}</h3>
-                    <p>{post.excerpt}</p>
-                    <div className="li-actions">
-                      <button className="load-li" data-embed={post.embed} data-h={String(post.height)}>
-                        Load post here
-                      </button>
-                      <a className="go-link" href={post.url} target="_blank" rel="noopener noreferrer">
-                        Open on LinkedIn ↗
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="car-dots" id="carDots" />
+            <div className="featured-grid reveal">
+              {featuredPosts.map((post, index) => (
+                <a
+                  key={`${post.url}-${index}`}
+                  className="featured-link-card"
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h3 className="featured-link-title">{post.title || `Featured Post ${index + 1}`}</h3>
+                  <span className="featured-link-cta">View post ↗</span>
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -314,27 +299,18 @@ export default function HomePage() {
           <div className="sec-head reveal">
             <span className="sec-no">05</span>
             <span className="sec-title">Writing and Posts</span>
-            <span className="sec-tag">[ from LinkedIn ]</span>
+            <span className="sec-tag">[ latest posts ]</span>
           </div>
-          <div className="blog-grid reveal">
-            {posts.map((post) => (
-              <article key={`${post.url}-blog`} className="post">
-                <div className="post-body">
-                  <div className="meta">
-                    <span className="pill">{post.tag}</span>
-                    <span>{post.date}</span>
-                    <span>{"// LinkedIn"}</span>
-                  </div>
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                  <div className="li-actions">
-                    <button className="load-li" data-embed={post.embed} data-h={String(post.height)}>
-                      Load LinkedIn post
-                    </button>
-                    <a className="go-link" href={post.url} target="_blank" rel="noopener noreferrer">
-                      Open on LinkedIn ↗
-                    </a>
-                  </div>
+          <div className="blog-list reveal">
+            {posts.slice(0, 5).map((post) => (
+              <article key={`${post.url}-blog`} className="post blog-card has-embed">
+                <div className="embed-wrap">
+                  <iframe
+                    loading="lazy"
+                    src={post.embed}
+                    style={{ height: `${post.height}px` }}
+                    title="LinkedIn post preview"
+                  />
                 </div>
               </article>
             ))}
@@ -342,11 +318,11 @@ export default function HomePage() {
           <div className="blog-cta reveal">
             <a
               className="btn primary"
-              href="https://www.linkedin.com/in/vishnu-jangid-7957ba160/"
+              href="https://www.linkedin.com/in/vishnu-jangid-7957ba160/recent-activity/all/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              See all posts on LinkedIn ↗
+              View all posts ↗
             </a>
           </div>
         </div>
