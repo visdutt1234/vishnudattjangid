@@ -1,5 +1,4 @@
 import portfolioData from "./data/portfolioData.json";
-import PortfolioClientInteractions from "./components/PortfolioClientInteractions";
 import Image from "next/image";
 
 const { jobs, posts, projects } = portfolioData;
@@ -64,28 +63,6 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="bg-grid" />
-      <PortfolioClientInteractions />
-
-      <nav>
-        <div className="wrap nav-in">
-          <a href="#top" className="brand">
-            <span className="dot" />
-            VISHNU_JANGID//SWE
-          </a>
-          <button className="menu-btn" id="menuBtn">
-            MENU_
-          </button>
-          <div className="nav-links" id="navLinks">
-            {["stack", "work", "projects", "blog", "edu", "contact"].map((section) => (
-              <a key={section} href={`#${section}`}>
-                /{section}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
       <a id="top" />
 
       <header>
@@ -117,7 +94,7 @@ export default function HomePage() {
             </div>
             <div className="id-card reveal">
               <div className="avatar">
-                <Image src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226+(1).jpeg" fill alt="Vishnu Jangid" className="ini" objectFit="cover" loading="lazy" />
+                <Image src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226+(1).jpeg" fill alt="Vishnu Jangid" className="ini" objectFit="cover" loading="eager" />
               </div>
               <div className="id-row">
                 <span>EXP</span>
@@ -294,40 +271,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="blog">
-        <div className="wrap">
-          <div className="sec-head reveal">
-            <span className="sec-no">05</span>
-            <span className="sec-title">Writing and Posts</span>
-            <span className="sec-tag">[ latest posts ]</span>
-          </div>
-          <div className="blog-list reveal">
-            {posts.slice(0, 5).map((post) => (
-              <article key={`${post.url}-blog`} className="post blog-card has-embed">
-                <div className="embed-wrap">
-                  <iframe
-                    loading="lazy"
-                    src={post.embed}
-                    style={{ height: `${post.height}px` }}
-                    title="LinkedIn post preview"
-                  />
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="blog-cta reveal">
-            <a
-              className="btn primary"
-              href="https://www.linkedin.com/in/vishnu-jangid-7957ba160/recent-activity/all/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View all posts ↗
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section id="contact">
         <div className="wrap">
           <div className="contact reveal">
@@ -359,17 +302,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer>
-        <div className="wrap foot-in">
-          <span>
-            Vishnu Datt Jangid © 2026 // <span className="acc">Software Engineer</span>
-          </span>
-          <span>
-            Engineer by profession - <span className="acc">photographer by passion</span>
-          </span>
-          <span>BUILD_REF: VJ_FE</span>
-        </div>
-      </footer>
     </>
   );
 }

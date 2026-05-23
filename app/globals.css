@@ -131,10 +131,11 @@ nav {
 
 .nav-links a {
   padding: 7px 13px;
-  color: var(--ink-dim);
+  color: var(--ink);
   border: 1px solid transparent;
   transition: 0.18s;
   border-radius: 2px;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
@@ -958,6 +959,72 @@ footer {
   color: var(--acc);
 }
 
+.resume-route {
+  padding: 110px 0 40px;
+}
+
+.blog-route {
+  padding: 110px 0 40px;
+}
+
+.resume-panel {
+  border: 1px solid var(--line-bright);
+  background: #0d1016;
+  border-radius: 4px;
+  box-shadow: 0 24px 48px -34px rgba(10, 14, 24, 0.7);
+}
+
+.resume-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(87, 255, 136, 0.25);
+  background: rgba(10, 14, 24, 0.96);
+}
+
+.resume-file {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #99f7ba;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resume-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #99f7ba;
+  border: 1px solid rgba(87, 255, 136, 0.55);
+  padding: 8px 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: 0.15s;
+}
+
+.resume-btn:hover {
+  background: #99f7ba;
+  color: #06120c;
+}
+
+.resume-frame {
+  padding: 16px;
+}
+
+.resume-frame iframe {
+  width: 100%;
+  height: min(78vh, 980px);
+  border: 1px solid rgba(87, 255, 136, 0.3);
+  background: #fff;
+}
+
 .feat-bar {
   display: flex;
   align-items: center;
@@ -1245,6 +1312,11 @@ footer {
 @media (max-width: 760px) {
   .featured-grid {
     grid-template-columns: 1fr;
+  }
+
+  .resume-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .slide {
