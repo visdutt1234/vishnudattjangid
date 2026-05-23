@@ -1,62 +1,8 @@
 import portfolioData from "./data/portfolioData.json";
 import Image from "next/image";
+import ProjectCard from "./components/ProjectCard";
 
-const { jobs, posts, projects } = portfolioData;
-type Project = (typeof projects)[number];
-
-function ProjectCard({ p, index }: { p: Project; index: number }) {
-  const host = p.url.replace(/^https?:\/\//, "").split("/")[0];
-  const initials = p.name
-    .replace(/[^A-Za-z ]/g, "")
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-  const hue = (index * 47) % 360;
-  const cover = `linear-gradient(150deg,hsl(${hue} 30% 24%),hsl(${(hue + 34) % 360} 36% 13%))`;
-
-  return (
-    <div className="card reveal">
-      <div className="frame">
-        <div className="browserbar">
-          <div className="browser-dots">
-            <i />
-            <i />
-            <i />
-          </div>
-          <div className="urlpill">
-            <span className="lock">&#128274;</span>
-            {host}
-          </div>
-        </div>
-        <div className="cover" style={{ background: cover }}>
-          <span className="plabel">{p.ix}</span>
-          <span className="mono">{initials}</span>
-          <a className="overlay" href={p.url} target="_blank" rel="noopener noreferrer">
-            <span className="open-btn">Open site ↗</span>
-          </a>
-        </div>
-      </div>
-      <div className="card-meta">
-        <div className="ix">{p.ix}</div>
-        <h4>
-          {p.name}
-          <a href={p.url} target="_blank" rel="noopener noreferrer">
-            ↗
-          </a>
-        </h4>
-        <p>{p.desc}</p>
-        <div className="card-tags">
-          {p.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+const { jobs, posts, projects, stack } = portfolioData;
 
 export default function HomePage() {
   const featuredPosts = posts.filter((post) => post.featured);
@@ -94,7 +40,14 @@ export default function HomePage() {
             </div>
             <div className="id-card reveal">
               <div className="avatar">
-                <Image src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226+(1).jpeg" fill alt="Vishnu Jangid" className="ini" objectFit="cover" loading="eager" />
+                <Image
+                  src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226+(1).jpeg"
+                  fill
+                  alt="Vishnu Jangid"
+                  className="ini"
+                  style={{ objectFit: "cover" }}
+                  loading="eager"
+                />
               </div>
               <div className="id-row">
                 <span>EXP</span>
@@ -151,50 +104,18 @@ export default function HomePage() {
             <span className="sec-tag">[ skills index ]</span>
           </div>
           <div className="mods reveal">
-            <div className="mod">
-              <div className="tag">MOD_01</div>
-              <h3>INTERFACE_DEV</h3>
-              <p>Production React UI engineering, responsive interfaces, and component-driven development at scale.</p>
-              <div className="chips">
-                <span className="chip">React</span>
-                <span className="chip">Next.js</span>
-                <span className="chip">TypeScript</span>
-                <span className="chip">Tailwind</span>
+            {stack.map((mod) => (
+              <div key={mod.tag} className="mod">
+                <div className="tag">{mod.tag}</div>
+                <h3>{mod.title}</h3>
+                <p>{mod.desc}</p>
+                <div className="chips">
+                  {mod.chips.map((chip) => (
+                    <span key={chip} className="chip">{chip}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="mod">
-              <div className="tag">MOD_02</div>
-              <h3>ARCHITECTURE</h3>
-              <p>Monorepo setups, design systems, design tokens, and shared component libraries across brands.</p>
-              <div className="chips">
-                <span className="chip">Nx</span>
-                <span className="chip">Design Systems</span>
-                <span className="chip">PWA</span>
-                <span className="chip">SSR</span>
-              </div>
-            </div>
-            <div className="mod">
-              <div className="tag">MOD_03</div>
-              <h3>PERFORMANCE</h3>
-              <p>Core Web Vitals, critical CSS, bundle optimization, code splitting, and caching strategies.</p>
-              <div className="chips">
-                <span className="chip">Vite</span>
-                <span className="chip">Webpack</span>
-                <span className="chip">CWV</span>
-                <span className="chip">AMP</span>
-              </div>
-            </div>
-            <div className="mod">
-              <div className="tag">MOD_04</div>
-              <h3>QUALITY_OPS</h3>
-              <p>E2E and unit testing, linting pipelines, code review, and CI automation for reliability.</p>
-              <div className="chips">
-                <span className="chip">Playwright</span>
-                <span className="chip">Jest</span>
-                <span className="chip">Storybook</span>
-                <span className="chip">GH Actions</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -206,31 +127,29 @@ export default function HomePage() {
             <span className="sec-title">Work Archive</span>
             <span className="sec-tag">[ career timeline ]</span>
           </div>
-          {jobs.map((job, index) => {
-            return (
-              <div key={job.company + job.dates} className={`job reveal ${index === 0 ? "open" : ""}`}>
-                <div className="job-head">
-                  <span className="loc">{job.location}</span>
-                  <div>
-                    <h3>{job.company}</h3>
-                    <span className="role">{job.role}</span>
-                  </div>
-                  <span className="dates">{job.dates}</span>
-                  <span className="exp">+</span>
+          {jobs.map((job, index) => (
+            <div key={job.company + job.dates} className={`job reveal ${index === 0 ? "open" : ""}`}>
+              <div className="job-head">
+                <span className="loc">{job.location}</span>
+                <div>
+                  <h3>{job.company}</h3>
+                  <span className="role">{job.role}</span>
                 </div>
-                <div className="job-body">
-                  <div className="job-body-in">
-                    <div className="impact-label">{job.impact}</div>
-                    <ul>
-                      {job.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  </div>
+                <span className="dates">{job.dates}</span>
+                <span className="exp">+</span>
+              </div>
+              <div className="job-body">
+                <div className="job-body-in">
+                  <div className="impact-label">{job.impact}</div>
+                  <ul>
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -301,7 +220,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

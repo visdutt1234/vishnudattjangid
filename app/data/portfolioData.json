@@ -1,4 +1,30 @@
 {
+  "stack": [
+    {
+      "tag": "MOD_01",
+      "title": "INTERFACE_DEV",
+      "desc": "Production React UI engineering, responsive interfaces, and component-driven development at scale.",
+      "chips": ["React", "Next.js", "TypeScript", "Tailwind"]
+    },
+    {
+      "tag": "MOD_02",
+      "title": "ARCHITECTURE",
+      "desc": "Monorepo setups, design systems, design tokens, and shared component libraries across brands.",
+      "chips": ["Nx", "Design Systems", "PWA", "SSR"]
+    },
+    {
+      "tag": "MOD_03",
+      "title": "PERFORMANCE",
+      "desc": "Core Web Vitals, critical CSS, bundle optimization, code splitting, and caching strategies.",
+      "chips": ["Vite", "Webpack", "CWV", "AMP"]
+    },
+    {
+      "tag": "MOD_04",
+      "title": "QUALITY_OPS",
+      "desc": "E2E and unit testing, linting pipelines, code review, and CI automation for reliability.",
+      "chips": ["Playwright", "Jest", "Storybook", "GH Actions"]
+    }
+  ],
   "projects": [
     {
       "ix": "PRJ_01",
@@ -134,13 +160,6 @@
       "embed": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7419588985062248448?collapsed=1",
       "height": 602,
       "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7419588985062248448/"
-    },
-    {
-      "featured": true,
-      "title": "🚀 Building a Scalable Multi-Product PWA Platform (SSR + GraphQL + Advanced Caching)",
-      "embed": "https://www.linkedin.com/embed/feed/update/urn:li:share:7431260093507125248?collapsed=1",
-      "height": 670,
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7431260093507125248/"
     }
   ],
   "jobs": [
