@@ -123,7 +123,7 @@ export default function HomePage() {
         <div className="wrap">
           <div className="quarter-head-row reveal">
             <span className="quarter-eyebrow">Now · May 2026</span>
-            <a href="/blog" className="quarter-link">See /now log →</a>
+            <Link href="/blog" className="quarter-link">See /now log →</Link>
           </div>
           <h2 className="quarter-title reveal">What I&apos;m working on this quarter</h2>
           <div className="quarter-grid">
@@ -143,7 +143,7 @@ export default function HomePage() {
         <div className="wrap">
           <div className="cases-eyebrow-row reveal">
             <span className="cases-eyebrow">Case studies · 03 featured</span>
-            <a href="/#work" className="cases-link">See archive (11 more) →</a>
+            <Link href="/#work" className="cases-link">See archive (11 more) →</Link>
           </div>
           <h2 className="headline-l cases-heading reveal">Three problems, three results.</h2>
           <div className="cases-list">
