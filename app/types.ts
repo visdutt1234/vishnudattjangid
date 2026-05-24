@@ -21,6 +21,15 @@ export interface Job {
   dates: string;
   impact: string;
   bullets: string[];
+  metric?: string;
+}
+
+export interface QuarterWork {
+  title: string;
+  status: "shipping" | "wip" | "writing";
+  statusLabel: string;
+  desc: string;
+  tags: string[];
 }
 
 export interface StackModule {

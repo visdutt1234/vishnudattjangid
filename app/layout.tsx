@@ -39,31 +39,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const navItems = [
-    { label: "Stack", href: "/#stack" },
-    { label: "Work", href: "/#work" },
-    { label: "Projects", href: "/#projects" },
-    { label: "Blogs", href: "/blog" },
-    { label: "Education", href: "/#edu" },
-    { label: "Contact", href: "/#contact" },
-    { label: "GitHub", href: "https://github.com/visdutt1234" },
-    { label: "Resume", href: "/resume" },
+    { label: "Work",    href: "/#work" },
+    { label: "Writing", href: "/blog" },
+    { label: "About",   href: "/#stack" },
+    { label: "Résumé",  href: "/resume" },
+    { label: "GitHub",  href: "https://github.com/visdutt1234" },
   ];
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="bg-grid" />
         <PortfolioClientInteractions />
         <nav>
           <div className="wrap nav-in">
             <Link href="/" className="brand">
-              <span className="dot" />
-              VISHNU_JANGID//SWE
+              <span className="brand-mark">VJ</span>
+              Vishnu Jangid
             </Link>
-            <button className="menu-btn" id="menuBtn">
-              MENU_
-            </button>
-            <div className="nav-links" id="navLinks">
+            <div className="nav-links">
               {navItems.map((item) => (
                 <a
                   key={item.label}
@@ -82,13 +75,8 @@ export default function RootLayout({
 
         <footer>
           <div className="wrap foot-in">
-            <span>
-              Vishnu Datt Jangid © 2026 // <span className="acc">Software Engineer</span>
-            </span>
-            <span>
-              Engineer by profession - <span className="acc">photographer by passion</span>
-            </span>
-            <span>BUILD_REF: VJ_FE</span>
+            <span>© 2026 Vishnu Datt Jangid · Engineer by profession, photographer by passion</span>
+            <span>build_ref: vj_fe · v2.0</span>
           </div>
         </footer>
       </body>
