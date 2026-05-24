@@ -1,115 +1,231 @@
-import portfolioData from "./data/portfolioData.json";
 import Image from "next/image";
-import ProjectCard from "./components/ProjectCard";
+import Link from "next/link";
+import portfolioData from "./data/portfolioData.json";
 
-const { jobs, posts, projects, stack } = portfolioData;
+const { jobs, posts, stack, quarterWork } = portfolioData as typeof portfolioData & {
+  quarterWork: { title: string; status: string; statusLabel: string; desc: string; tags: string[] }[];
+};
+
+const stats = [
+  { value: "30M+", label: "Monthly active users reached", sublabel: "CarDekho group · 2023–25" },
+  { value: "–40%", label: "JavaScript bundle reduction",  sublabel: "react-common · route splitting" },
+  { value: "95%",  label: "Faster builds (Webpack→Vite)", sublabel: "Thrillophilia · 2025" },
+  { value: "7+",   label: "Years shipping at scale",      sublabel: "Senior IC track · Jaipur" },
+];
+
+const shippedFor = ["Thrillophilia", "CarDekho", "BikeDekho", "TruckDekho", "Ashok Leyland", "Kinetic Green"];
 
 export default function HomePage() {
-  const featuredPosts = posts.filter((post) => post.featured);
+  const notePosts = posts.slice(0, 3);
 
   return (
     <>
-      <a id="top" />
-
+      {/* ── Hero ─────────────────────────────────── */}
       <header>
         <div className="wrap">
-          <div className="status reveal">
-            <span className="live">Shipping to 30M+ monthly users</span>
-            <span>{"// 7+ yrs - frontend-heavy full-stack"}</span>
-            <span>{"// performance - systems - scale"}</span>
-          </div>
           <div className="hero-grid">
-            <div className="reveal">
-              <h1 className="title">
-                Senior Software <em>Engineer</em>
-                <span className="sub">Full-stack - Frontend-focused - Performance and Architecture</span>
+            <div className="hero-content">
+              <div className="hero-eyebrow reveal">
+                <span className="live-dot" />
+                Open to senior frontend &amp; platform roles · Q3 2026
+              </div>
+
+              <h1 className="display-xl reveal">
+                Senior Software<br />
+                Engineer<br />
+                building<br />
+                <span className="accent">fast products at scale.</span>
               </h1>
-              <p className="lede">
-                I build products end-to-end - from architecture and APIs to the pixels users touch - with a
-                frontend specialty. 7+ years shipping high-traffic, multi-brand platforms across travel, automotive
-                and ecommerce.
+
+              <p className="lede reveal">
+                Seven years of frontend-led full-stack work — design systems,
+                platform architecture and Core Web Vitals — for travel,
+                automotive and ecommerce brands reaching{" "}
+                <strong>~30 million users a month</strong>.
               </p>
-              <div className="cta">
-                <a className="btn primary" href="#projects">
-                  View Projects ↗
+
+              <div className="hero-cta-row reveal">
+                <a className="btn-primary" href="#work">
+                  See selected work →
                 </a>
-                <a className="btn" href="mailto:vishnujangid.dev@gmail.com">
-                  Get in touch
+                <a
+                  className="btn-text"
+                  href="https://vj-media.s3.eu-north-1.amazonaws.com/vishnu-datt-jangid.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  or download CV (PDF, 2 pages)
                 </a>
               </div>
+
+              <div className="hero-info-grid reveal">
+                <div className="hero-info-item">
+                  <div className="hero-info-label">Currently</div>
+                  <div className="hero-info-value">Senior SWE @ Thrillophilia</div>
+                </div>
+                <div className="hero-info-item">
+                  <div className="hero-info-label">Based in</div>
+                  <div className="hero-info-value">Jaipur, India · GMT+5:30</div>
+                </div>
+                <div className="hero-info-item">
+                  <div className="hero-info-label">Working in</div>
+                  <div className="hero-info-value">React · Next · Node · TS</div>
+                </div>
+              </div>
             </div>
-            <div className="id-card reveal">
-              <div className="avatar">
+
+            <div className="hero-right reveal">
+              <div className="hero-photo">
                 <Image
                   src="https://vj-media.s3.eu-north-1.amazonaws.com/1748215549226+(1).jpeg"
                   fill
                   alt="Vishnu Jangid"
-                  className="ini"
                   style={{ objectFit: "cover" }}
                   loading="eager"
                 />
               </div>
-              <div className="id-row">
-                <span>EXP</span>
-                <span>7+ years</span>
+              <div className="hero-name-card">
+                <span className="name">Vishnu Datt Jangid</span>
+                <span className="exp">7+ years · frontend-heavy full-stack</span>
               </div>
-              <div className="id-row">
-                <span>ROLE</span>
-                <span>Sr. Software Eng</span>
-              </div>
-              <div className="id-row">
-                <span>SCALE</span>
-                <span>30M+ MAU</span>
-              </div>
-              <div className="id-row">
-                <span>STACK</span>
-                <span>React - Node</span>
-              </div>
+            </div>
+          </div>
+
+          {/* Full-width shipped-for row */}
+          <div className="shipped-for reveal">
+            <div className="shipped-label">Shipped for</div>
+            <div className="shipped-list">
+              {shippedFor.map((c) => (
+                <span key={c}>{c}</span>
+              ))}
             </div>
           </div>
         </div>
       </header>
 
-      {featuredPosts.length > 0 && (
-        <section id="featured" className="featured">
-          <div className="wrap">
-            <div className="feat-bar reveal">
-              <span className="lbl">FEATURED</span>
-              <span>{"// latest writing and updates"}</span>
-              <span className="line" />
-            </div>
-            <div className="featured-grid reveal">
-              {featuredPosts.map((post, index) => (
-                <a
-                  key={`${post.url}-${index}`}
-                  className="featured-link-card"
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <h3 className="featured-link-title">{post.title || `Featured Post ${index + 1}`}</h3>
-                  <span className="featured-link-cta">View post ↗</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section id="stack">
+      {/* ── Stats ────────────────────────────────── */}
+      <section className="stats-section">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <span className="sec-no">01</span>
-            <span className="sec-title">Core Stack</span>
-            <span className="sec-tag">[ skills index ]</span>
+          <div className="stats-grid">
+            {stats.map((s) => (
+              <div key={s.value} className="stat-card reveal">
+                <span className="stat-value">{s.value}</span>
+                <span className="stat-label">{s.label}</span>
+                <span className="stat-sublabel">{s.sublabel}</span>
+              </div>
+            ))}
           </div>
-          <div className="mods reveal">
+        </div>
+      </section>
+
+      {/* ── This quarter ─────────────────────────── */}
+      <section className="quarter-section" id="quarter">
+        <div className="wrap">
+          <div className="quarter-head-row reveal">
+            <span className="quarter-eyebrow">Now · May 2026</span>
+            <a href="/blog" className="quarter-link">See /now log →</a>
+          </div>
+          <h2 className="quarter-title reveal">What I&apos;m working on this quarter</h2>
+          <div className="quarter-grid">
+            {quarterWork.map((item) => (
+              <div key={item.title} className="quarter-card reveal">
+                <span className={`quarter-status ${item.status}`}>{item.statusLabel}</span>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Case studies ─────────────────────────── */}
+      <section className="cases-section" id="work">
+        <div className="wrap">
+          <div className="cases-eyebrow-row reveal">
+            <span className="cases-eyebrow">Case studies · 03 featured</span>
+            <a href="/#work" className="cases-link">See archive (11 more) →</a>
+          </div>
+          <h2 className="headline-l cases-heading reveal">Three problems, three results.</h2>
+          <div className="cases-list">
+            {jobs.map((job, i) => (
+              <div key={`${job.company}-${i}`} className="case-card reveal">
+                <div className="case-left">
+                  <div className="case-top-row">
+                    <span className="case-no">0{i + 1}</span>
+                    <a
+                      href={`https://${job.caseUrl}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="case-url-link"
+                    >
+                      ↗ {job.caseUrl?.toUpperCase()}
+                    </a>
+                  </div>
+                  <span className="case-type">Case Study</span>
+                  <span className="case-result-label">Result</span>
+                  <span className="case-metric">{job.metric}</span>
+                  <p className="case-result-sub">{job.result_sublabel}</p>
+                </div>
+
+                <div className="case-right">
+                  <div className="case-company-row">
+                    <span className="case-company">
+                      <strong>{job.company}</strong>
+                      {" · "}
+                      {job.role}
+                    </span>
+                    <span className="case-dates">{job.dates}</span>
+                  </div>
+
+                  <p className="case-summary">{job.summary}</p>
+
+                  <div className="case-body">
+                    <div className="case-problem">
+                      <div className="case-section-label">Problem</div>
+                      <p>{job.problem}</p>
+                    </div>
+                    <div className="case-approach">
+                      <div className="case-section-label">Approach</div>
+                      <ul>
+                        {job.approach?.map((point, pi) => (
+                          <li key={pi}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="case-footer">
+                    <div className="chip-row">
+                      {job.tags?.map((tag) => (
+                        <span key={tag} className="chip">{tag}</span>
+                      ))}
+                    </div>
+                    <a
+                      href={`https://${job.caseUrl}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="case-read-more"
+                    >
+                      Read full case study →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Domain ───────────────────────────────── */}
+      <section className="domain-section" id="stack">
+        <div className="wrap">
+          <h2 className="headline-l reveal">What I reach for, by domain.</h2>
+          <div className="domain-grid">
             {stack.map((mod) => (
-              <div key={mod.tag} className="mod">
-                <div className="tag">{mod.tag}</div>
+              <div key={mod.tag} className="domain-group reveal">
                 <h3>{mod.title}</h3>
                 <p>{mod.desc}</p>
-                <div className="chips">
+                <div className="chip-row">
                   {mod.chips.map((chip) => (
                     <span key={chip} className="chip">{chip}</span>
                   ))}
@@ -120,102 +236,68 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="work">
+      {/* ── Notes ────────────────────────────────── */}
+      <section className="notes-section" id="blog">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <span className="sec-no">02</span>
-            <span className="sec-title">Work Archive</span>
-            <span className="sec-tag">[ career timeline ]</span>
+          <div className="sec-head-row reveal">
+            <h2 className="headline-l" style={{ marginBottom: 0 }}>Notes on the work.</h2>
+            <Link href="/blog" className="sec-link">All posts →</Link>
           </div>
-          {jobs.map((job, index) => (
-            <div key={job.company + job.dates} className={`job reveal ${index === 0 ? "open" : ""}`}>
-              <div className="job-head">
-                <span className="loc">{job.location}</span>
-                <div>
-                  <h3>{job.company}</h3>
-                  <span className="role">{job.role}</span>
-                </div>
-                <span className="dates">{job.dates}</span>
-                <span className="exp">+</span>
-              </div>
-              <div className="job-body">
-                <div className="job-body-in">
-                  <div className="impact-label">{job.impact}</div>
-                  <ul>
-                    {job.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="projects">
-        <div className="wrap">
-          <div className="sec-head reveal">
-            <span className="sec-no">03</span>
-            <span className="sec-title">Selected Work</span>
-            <span className="sec-tag">[ live previews ]</span>
-          </div>
-          <p className="proj-note reveal">
-            Each tile is a browser-framed preview with the live site favicon and URL. Hit <b>Open</b> to launch the
-            real site in a new tab.
-          </p>
-          <div className="proj-grid">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.ix} p={project} index={index} />
+          <div className="notes-grid">
+            {notePosts.map((post) => (
+              <a
+                key={post.url}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="note-card reveal"
+              >
+                <h3>{post.title}</h3>
+                <span className="read-more">Read post →</span>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="edu">
+      {/* ── CTA ──────────────────────────────────── */}
+      <section className="cta-section" id="contact">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <span className="sec-no">04</span>
-            <span className="sec-title">Credentials</span>
-            <span className="sec-tag">[ verified ]</span>
-          </div>
-          <div className="edu reveal">
-            <span className="yr">&apos;18</span>
-            <div>
-              <h3>Bachelor of Computer Applications</h3>
-              <p>University of Maharaja&apos;s College, Jaipur - Computer Science - 2015 to 2018</p>
+          <div className="cta-grid reveal">
+            <div className="cta-left">
+              <h2>
+                Got something fast<br />
+                <span className="accent">to build?</span>
+              </h2>
+              <p>
+                Ambitious frontend, performance problem, or a platform that
+                needs to scale — drop a line. I respond within 48 hours.
+              </p>
             </div>
-            <span className="verified">CREDENTIAL VERIFIED</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div className="wrap">
-          <div className="contact reveal">
-            <div className="ping">OPEN CHANNEL // AWAITING SIGNAL</div>
-            <h2>
-              Let&apos;s build something <em>fast.</em>
-            </h2>
-            <p>
-              Got an ambitious frontend, a performance problem, or a platform that needs to scale? Drop a line - I am
-              always up for interesting architecture.
-            </p>
-            <div className="links">
-              <a className="btn primary" href="mailto:vishnujangid.dev@gmail.com">
-                Send mail
+            <div className="cta-actions">
+              <a className="cta-email" href="mailto:vishnujangid.dev@gmail.com">
+                vishnujangid.dev@gmail.com
+                <span>→</span>
               </a>
-              <a
-                className="btn"
-                href="https://www.linkedin.com/in/vishnu-jangid-7957ba160/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a className="btn" href="tel:+918947972543">
-                +91 8947972543
-              </a>
+              <div className="cta-social-row">
+                <a
+                  className="cta-social-btn"
+                  href="https://www.linkedin.com/in/vishnu-jangid-7957ba160/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn <span>↗</span>
+                </a>
+                <a
+                  className="cta-social-btn"
+                  href="https://github.com/visdutt1234"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub <span>↗</span>
+                </a>
+              </div>
+              <p className="cta-phone">+91 8947972543 · Jaipur, IN · GMT+5:30</p>
             </div>
           </div>
         </div>

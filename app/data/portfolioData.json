@@ -2,127 +2,27 @@
   "stack": [
     {
       "tag": "MOD_01",
-      "title": "INTERFACE_DEV",
-      "desc": "Production React UI engineering, responsive interfaces, and component-driven development at scale.",
+      "title": "Interface",
+      "desc": "Production React UI at scale",
       "chips": ["React", "Next.js", "TypeScript", "Tailwind"]
     },
     {
       "tag": "MOD_02",
-      "title": "ARCHITECTURE",
-      "desc": "Monorepo setups, design systems, design tokens, and shared component libraries across brands.",
+      "title": "Architecture",
+      "desc": "Monorepos, design tokens, shared libs",
       "chips": ["Nx", "Design Systems", "PWA", "SSR"]
     },
     {
       "tag": "MOD_03",
-      "title": "PERFORMANCE",
-      "desc": "Core Web Vitals, critical CSS, bundle optimization, code splitting, and caching strategies.",
-      "chips": ["Vite", "Webpack", "CWV", "AMP"]
+      "title": "Performance",
+      "desc": "Core Web Vitals & bundle work",
+      "chips": ["Vite", "Webpack", "CWV", "Critical CSS"]
     },
     {
       "tag": "MOD_04",
-      "title": "QUALITY_OPS",
-      "desc": "E2E and unit testing, linting pipelines, code review, and CI automation for reliability.",
+      "title": "Quality Ops",
+      "desc": "Testing, CI pipelines, code quality",
       "chips": ["Playwright", "Jest", "Storybook", "GH Actions"]
-    }
-  ],
-  "projects": [
-    {
-      "ix": "PRJ_01",
-      "name": "CarDekho",
-      "url": "https://www.cardekho.com",
-      "desc": "India's #1 auto marketplace. Platform/PWA work - shared component library and bundle optimization.",
-      "tags": ["React", "PWA", "SSR", "Perf"]
-    },
-    {
-      "ix": "PRJ_02",
-      "name": "BikeDekho",
-      "url": "https://www.bikedekho.com",
-      "desc": "Multi-brand two-wheeler marketplace built on the shared react-common platform.",
-      "tags": ["React", "PWA", "SEO"]
-    },
-    {
-      "ix": "PRJ_03",
-      "name": "Connecto",
-      "url": "https://www.connecto.io/",
-      "desc": "Connected-mobility product surface - performance and UI engineering.",
-      "tags": ["Frontend", "UI"]
-    },
-    {
-      "ix": "PRJ_04",
-      "name": "Ashok Leyland",
-      "url": "https://www.ashokleyland.com/",
-      "desc": "Commercial-vehicle giant. Led the client frontend build end-to-end.",
-      "tags": ["Client", "React", "AMP"]
-    },
-    {
-      "ix": "PRJ_05",
-      "name": "Kinetic Green",
-      "url": "https://kineticgreen.com/",
-      "desc": "EV brand site delivered as a UI-team lead engagement.",
-      "tags": ["Client", "UI", "Perf"]
-    },
-    {
-      "ix": "PRJ_06",
-      "name": "Careline (Girnar)",
-      "url": "https://careline.girnarsoft.com/employee/login",
-      "desc": "Internal employee portal - frontend and auth flow.",
-      "tags": ["Internal", "Auth"]
-    },
-    {
-      "ix": "PRJ_07",
-      "name": "My Telly",
-      "url": "https://mytelly.in/",
-      "desc": "Consumer web platform - frontend development.",
-      "tags": ["Frontend", "UI"]
-    },
-    {
-      "ix": "PRJ_08",
-      "name": "Dada Motors",
-      "url": "https://design.girnarsoft.com/vishnu/dadaMotors/",
-      "desc": "Dealer microsite build - responsive HTML/CSS/React.",
-      "tags": ["Client", "Responsive"]
-    },
-    {
-      "ix": "PRJ_09",
-      "name": "Tata Yodha",
-      "url": "https://design.girnarsoft.com/vishnu/tata/app/index.html",
-      "desc": "Interactive product app prototype.",
-      "tags": ["Prototype", "JS"]
-    },
-    {
-      "ix": "PRJ_10",
-      "name": "Icareheal",
-      "url": "https://icareheal.com/",
-      "desc": "Healthcare platform - frontend engineering.",
-      "tags": ["Frontend", "UI"]
-    },
-    {
-      "ix": "PRJ_11",
-      "name": "Connected Cars",
-      "url": "https://www.cardekho.com/connected-cars",
-      "desc": "CarDekho connected-cars vertical landing experience.",
-      "tags": ["SEO", "React"]
-    },
-    {
-      "ix": "PRJ_12",
-      "name": "SIAM Admin",
-      "url": "https://design.girnarsoft.com/vishnu/SIAM-admin/index.html",
-      "desc": "Admin dashboard interface build.",
-      "tags": ["Dashboard", "UI"]
-    },
-    {
-      "ix": "PRJ_13",
-      "name": "Kinetic Green (build)",
-      "url": "https://design.girnarsoft.com/vishnu/kineticgreen/index.htm",
-      "desc": "Static delivery build for the Kinetic Green campaign.",
-      "tags": ["Client", "HTML/CSS"]
-    },
-    {
-      "ix": "PRJ_14",
-      "name": "Jansons Carpets",
-      "url": "https://jansonscarpets.com/",
-      "desc": "Ecommerce/brand site delivered as a client engagement.",
-      "tags": ["Client", "Ecommerce"]
     }
   ],
   "posts": [
@@ -135,21 +35,21 @@
     },
     {
       "featured": true,
-      "title": "🚧 Scaling Frontend Across Multiple Apps — From Chaos to System Design",
+      "title": "Scaling Frontend Across Multiple Apps — From Chaos to System Design",
       "embed": "https://www.linkedin.com/embed/feed/update/urn:li:share:7442639336140951552?collapsed=1",
       "height": 670,
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7442639336140951552/"
     },
     {
       "featured": true,
-      "title": "🚀 Building a Scalable Multi-Product PWA Platform (SSR + GraphQL + Advanced Caching)",
+      "title": "Building a Scalable Multi-Product PWA Platform (SSR + GraphQL + Advanced Caching)",
       "embed": "https://www.linkedin.com/embed/feed/update/urn:li:share:7431260093507125248?collapsed=1",
       "height": 670,
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7431260093507125248/"
     },
     {
       "featured": true,
-      "title": "Performance isn’t optional anymore. It directly impacts SEO, user experience, and conversions.",
+      "title": "Performance isn't optional anymore. It directly impacts SEO, user experience, and conversions.",
       "embed": "https://www.linkedin.com/embed/feed/update/urn:li:share:7429476926030852096?collapsed=1",
       "height": 264,
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7429476926030852096/"
@@ -162,27 +62,48 @@
       "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7419588985062248448/"
     }
   ],
-  "jobs": [
+  "quarterWork": [
     {
-      "company": "Thrillophilia",
-      "role": "SENIOR SOFTWARE ENGINEER",
-      "location": "JAIPUR",
-      "dates": "MAY 2025 - PRESENT",
-      "impact": "IMPACT_LOG // India's largest experiences and travel marketplace",
-      "bullets": [
-        "Migrated the build system from Webpack to Vite and decoupled the React app from Ruby on Rails - builds got ~95% faster.",
-        "Set up an Nx monorepo to consolidate frontend code, speeding up CI and sharing tooling.",
-        "Built a Tailwind-based design system with reusable components and design tokens.",
-        "Worked on business-critical flows: lead forms, login/signup, and campaign landing pages.",
-        "Added Playwright E2E tests and wired ESLint + Prettier into every PR via GitHub Actions."
-      ]
+      "title": "Migrating react-rails → Vite + Nx",
+      "status": "shipping",
+      "statusLabel": "SHIPPING",
+      "desc": "~95% faster builds, decoupled the React app from Ruby on Rails.",
+      "tags": ["Vite", "Nx", "Rails"]
     },
     {
-      "company": "CarDekho - Girnar Software",
-      "role": "SOFTWARE ENGINEER - PLATFORM / PWA",
+      "title": "Tailwind design system + tokens",
+      "status": "building",
+      "statusLabel": "BUILDING",
+      "desc": "Reusable component library for lead, auth and campaign flows.",
+      "tags": ["Tailwind", "Tokens", "Components"]
+    },
+    {
+      "title": "Browser internals & web performance",
+      "status": "writing",
+      "statusLabel": "WRITING",
+      "desc": "From navigation to interactivity — a long-form series on LinkedIn.",
+      "tags": ["Performance", "Writing", "CWV"]
+    }
+  ],
+  "jobs": [
+    {
+      "company": "CarDekho · Girnar",
+      "role": "Software Engineer · Platform / PWA",
       "location": "JAIPUR",
-      "dates": "APR 2023 - APR 2025",
-      "impact": "IMPACT_LOG // Auto-tech unicorn - ~30M+ monthly users across 4 brands",
+      "dates": "Apr 2023 – Apr 2025",
+      "impact": "Auto-tech unicorn — ~30M+ monthly users across 4 brands",
+      "metric": "–40%",
+      "caseUrl": "cardekho.com",
+      "summary": "Cut JS bundle by 40% across four auto brands serving 30M users a month.",
+      "result_sublabel": "JS bundle, p50 LCP improved on 3G; ranked auto-marketplace #1 in India.",
+      "problem": "Four React apps (CarDekho, BikeDekho, TruckDekho, BatteryDekho) shared a 1.2 MB bundle. LCP was suffering on mid-tier Android, and the SEO team was losing rankings to faster competitors.",
+      "approach": [
+        "Built react-common — the shared component library powering all four brands",
+        "Route-level code splitting + lazy loading + error boundaries",
+        "PWA service-worker with per-resource caching strategies",
+        "React SSR with Express + page-specific critical CSS"
+      ],
+      "tags": ["React", "SSR", "PWA", "Express", "Critical CSS", "Webpack"],
       "bullets": [
         "Built and maintained react-common, the shared library powering CarDekho, BikeDekho, TruckDekho and BatteryDekho.",
         "Cut JS bundle size by 40%+ using route-level code splitting, lazy loading, and error boundaries.",
@@ -192,11 +113,49 @@
       ]
     },
     {
-      "company": "CarDekho - Girnar Software",
-      "role": "FRONTEND DEVELOPER - UI TEAM LEAD",
+      "company": "Thrillophilia",
+      "role": "Senior Software Engineer",
       "location": "JAIPUR",
-      "dates": "MAR 2019 - APR 2023",
-      "impact": "IMPACT_LOG // Client engagements and team leadership",
+      "dates": "May 2025 – Present",
+      "impact": "India's largest experiences and travel marketplace",
+      "metric": "20s → 1s",
+      "caseUrl": "thrillophilia.com",
+      "summary": "Decoupled React from Rails and built the design system India's largest experiences marketplace runs on.",
+      "result_sublabel": "Per-change rebuild. Design system shipped to lead, auth and campaign flows.",
+      "problem": "Frontend was bolted to a Ruby on Rails build that took ~20s per change. No shared components. Lead and auth flows duplicated logic across 6+ surfaces.",
+      "approach": [
+        "Migrated build system from Webpack to Vite — ~95% faster builds",
+        "Stood up an Nx monorepo to consolidate frontend code",
+        "Authored Tailwind-based design system with reusable tokens",
+        "Wired Playwright E2E + ESLint/Prettier into every PR via GH Actions"
+      ],
+      "tags": ["Vite", "Nx", "Tailwind", "Playwright", "GH Actions"],
+      "bullets": [
+        "Migrated the build system from Webpack to Vite and decoupled the React app from Ruby on Rails - builds got ~95% faster.",
+        "Set up an Nx monorepo to consolidate frontend code, speeding up CI and sharing tooling.",
+        "Built a Tailwind-based design system with reusable components and design tokens.",
+        "Worked on business-critical flows: lead forms, login/signup, and campaign landing pages.",
+        "Added Playwright E2E tests and wired ESLint + Prettier into every PR via GitHub Actions."
+      ]
+    },
+    {
+      "company": "Ashok Leyland · Kinetic Green",
+      "role": "Frontend Developer · UI Team Lead",
+      "location": "JAIPUR",
+      "dates": "Mar 2019 – Apr 2023",
+      "impact": "Client engagements and team leadership",
+      "metric": "97 / 100",
+      "caseUrl": "ashokleyland.com",
+      "summary": "Led a three-person team delivering enterprise frontend builds for commercial-vehicle and EV brands.",
+      "result_sublabel": "Median Lighthouse performance across delivered builds.",
+      "problem": "CarDekho's client services arm needed pixel-faithful, performance-tuned sites for Ashok Leyland (commercial vehicles), Kinetic Green (EV) and Jansons Carpets — on tight deadlines.",
+      "approach": [
+        "Owned client builds end-to-end: HTML, CSS, React, GraphQL, AMP, Tailwind",
+        "Set quality bar around performance, accessibility and code review",
+        "Mentored two junior devs via pairing and structured reviews",
+        "Delivered five+ enterprise builds, including AMP-first product pages"
+      ],
+      "tags": ["React", "GraphQL", "AMP", "Tailwind", "HTML/CSS"],
       "bullets": [
         "Led a 3-person UI team delivering frontend builds for Ashok Leyland, Kinetic Green and Jansons Carpets.",
         "Mentored junior developers via code reviews and pairing with quality standards around performance and accessibility.",
