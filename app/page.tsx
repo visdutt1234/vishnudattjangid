@@ -38,9 +38,10 @@ export default function HomePage() {
               </h1>
 
               <p className="lede reveal">
-                Seven years of frontend-led full-stack work — design systems,
-                platform architecture and Core Web Vitals — for travel,
-                automotive and ecommerce brands reaching{" "}
+                Seven years taking end-to-end ownership of frontend — from
+                architecture decisions and design systems to Core Web Vitals
+                and release pipelines — for travel, automotive and ecommerce
+                products reaching{" "}
                 <strong>~30 million users a month</strong>.
               </p>
 
@@ -193,6 +194,29 @@ export default function HomePage() {
                       </ul>
                     </div>
                   </div>
+
+                  {(job.challenges || job.tradeoffs || job.learnings) && (
+                    <div className="case-insights">
+                      {job.challenges && (
+                        <div className="case-insight-item">
+                          <div className="case-section-label">Challenges</div>
+                          <p>{job.challenges}</p>
+                        </div>
+                      )}
+                      {job.tradeoffs && (
+                        <div className="case-insight-item">
+                          <div className="case-section-label">Trade-offs</div>
+                          <p>{job.tradeoffs}</p>
+                        </div>
+                      )}
+                      {job.learnings && (
+                        <div className="case-insight-item">
+                          <div className="case-section-label">Learnings</div>
+                          <p>{job.learnings}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   <div className="case-footer">
                     <div className="chip-row">

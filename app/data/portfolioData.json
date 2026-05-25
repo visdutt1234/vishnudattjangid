@@ -23,6 +23,12 @@
       "title": "Quality Ops",
       "desc": "Testing, CI pipelines, code quality",
       "chips": ["Playwright", "Jest", "Storybook", "GH Actions"]
+    },
+    {
+      "tag": "MOD_05",
+      "title": "AI & Emerging Tech",
+      "desc": "Integrating AI into real product workflows — curiosity over hype",
+      "chips": ["LLMs", "AI APIs", "Vercel AI SDK", "Prompt Design"]
     }
   ],
   "posts": [
@@ -83,6 +89,13 @@
       "statusLabel": "WRITING",
       "desc": "From navigation to interactivity — a long-form series on LinkedIn.",
       "tags": ["Performance", "Writing", "CWV"]
+    },
+    {
+      "title": "AI-assisted product development",
+      "status": "exploring",
+      "statusLabel": "EXPLORING",
+      "desc": "Integrating LLM APIs into real product flows — learning where AI adds genuine value vs. noise in user interfaces.",
+      "tags": ["AI", "LLMs", "Product Thinking"]
     }
   ],
   "jobs": [
@@ -104,6 +117,9 @@
         "React SSR with Express + page-specific critical CSS"
       ],
       "tags": ["React", "SSR", "PWA", "Express", "Critical CSS", "Webpack"],
+      "challenges": "Keeping react-common stable across four live brands — any regression simultaneously broke CarDekho, BikeDekho, TruckDekho and BatteryDekho. Mid-tier Android constraints made standard optimisation assumptions wrong.",
+      "tradeoffs": "Chose SSR over a full SPA to protect SEO rankings, accepting server infrastructure complexity. Aggressive route-level code splitting meant more round-trips on slow 3G — a deliberate trade for faster first paint on 4G and above.",
+      "learnings": "Performance is a habit, not a sprint — scores drift without automated budgets in CI. Shared libraries need strict versioning and changelogs from day one; retroactive governance is painful.",
       "bullets": [
         "Built and maintained react-common, the shared library powering CarDekho, BikeDekho, TruckDekho and BatteryDekho.",
         "Cut JS bundle size by 40%+ using route-level code splitting, lazy loading, and error boundaries.",
@@ -130,6 +146,9 @@
         "Wired Playwright E2E + ESLint/Prettier into every PR via GH Actions"
       ],
       "tags": ["Vite", "Nx", "Tailwind", "Playwright", "GH Actions"],
+      "challenges": "Migrating a live production system while continuing to ship features. Designing a component API flexible enough for three teams but opinionated enough to enforce consistency across lead, auth and campaign surfaces.",
+      "tradeoffs": "Invested two feature sprints upfront on tooling and infra — delayed visible output, but recovered that time within the same quarter through faster iteration. Picked Vite over esbuild for ecosystem maturity, accepting marginally slower cold starts.",
+      "learnings": "Good tooling multiplies team output; bad tooling silently taxes it. A design system without co-shipped docs dies within months — I shipped the documentation alongside the components, not after.",
       "bullets": [
         "Migrated the build system from Webpack to Vite and decoupled the React app from Ruby on Rails - builds got ~95% faster.",
         "Set up an Nx monorepo to consolidate frontend code, speeding up CI and sharing tooling.",
@@ -156,6 +175,9 @@
         "Delivered five+ enterprise builds, including AMP-first product pages"
       ],
       "tags": ["React", "GraphQL", "AMP", "Tailwind", "HTML/CSS"],
+      "challenges": "Pixel-faithful enterprise builds on tight client deadlines, with limited feedback cycles and no dedicated QA. Accessibility and performance had to be enforced without external oversight.",
+      "tradeoffs": "Used AMP for commercial-vehicle product pages to hit Core Web Vitals thresholds, accepting limited interactivity. Prioritised delivery speed on early projects, taking on deliberate, tracked technical debt cleared in later sprints.",
+      "learnings": "Mentoring forces you to articulate things you assumed were obvious. Performance budgets are far easier to set at project kickoff than to retrofit after launch.",
       "bullets": [
         "Led a 3-person UI team delivering frontend builds for Ashok Leyland, Kinetic Green and Jansons Carpets.",
         "Mentored junior developers via code reviews and pairing with quality standards around performance and accessibility.",

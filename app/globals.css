@@ -531,6 +531,10 @@ header {
   color: #7c3aed;
 }
 
+.quarter-status.exploring {
+  color: var(--green);
+}
+
 .quarter-card h3 {
   font-size: 16px;
   font-weight: 600;
@@ -757,6 +761,20 @@ header {
   position: absolute;
   left: 0;
   color: var(--ink-3);
+}
+
+.case-insights {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+}
+
+.case-insight-item p {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.65;
 }
 
 .case-footer {
@@ -1154,6 +1172,7 @@ footer {
   .quarter-grid { grid-template-columns: repeat(2, 1fr); }
   .case-card { grid-template-columns: 200px 1fr; }
   .case-body { grid-template-columns: 1fr; }
+  .case-insights { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr; gap: 48px; }
   .domain-grid { grid-template-columns: repeat(2, 1fr); }
   .domain-group:nth-child(2) { border-right: none; }
@@ -1174,6 +1193,7 @@ footer {
   .case-right { padding: 20px 16px; }
   .case-metric { font-size: 36px; letter-spacing: -1.5px; }
   .case-body { grid-template-columns: 1fr; }
+  .case-insights { grid-template-columns: 1fr; }
   .case-company-row { flex-direction: column; gap: 4px; }
   .domain-grid { grid-template-columns: 1fr; }
   .domain-group { border-right: none; border-bottom: 1px solid var(--border-light); }

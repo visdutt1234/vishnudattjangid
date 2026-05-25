@@ -26,7 +26,7 @@ export interface Job {
 
 export interface QuarterWork {
   title: string;
-  status: "shipping" | "wip" | "writing";
+  status: "shipping" | "wip" | "writing" | "exploring";
   statusLabel: string;
   desc: string;
   tags: string[];
